@@ -7,6 +7,8 @@ build
 
 # Project files
 *.iml
+.nodes.json
+.nodes.json.bak
 .idea
 .classpath
 .key

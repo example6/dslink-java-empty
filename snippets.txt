@@ -11,13 +11,13 @@ Node superRoot = manager.getNode("/").getNode();
 
 
 // Create a child node
-Node child1 = superRoot.createChild("Child1", false).build();
+Node child1 = superRoot.createChild("Child1").build();
 
 
 
 
 // Create a value under Child1
-Node child1Value = child1.createChild("Value1", false)
+Node myValue = child1.createChild("Value1")
 	.setValueType(ValueType.NUMBER)
 	.setValue(new Value(1000))
 	.setSerializable(false)
@@ -42,8 +42,8 @@ addAction.addParameter(new Parameter("AmountToAdd", ValueType.NUMBER));
 
 
 // Add an action to a node
-Node child1Action1 = child1.createChild("AddToValue", false)
-	.setAction(addAction);
+Node child1Action1 = child1.createChild("AddToValue")
+	.setAction(addAction)
 	.setSerializable(false)
 	.build();
 

@@ -3,7 +3,7 @@ apply plugin: 'findbugs'
 apply plugin: 'java'
 apply plugin: 'idea'
 
-mainClassName = 'org.dsa.iot.demo.EmptyDSLink'
+mainClassName = 'org.dsa.iot.empty.EmptyDSLink'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 version = '0.0.1-SNAPSHOT'
@@ -50,4 +50,3 @@ tasks.withType(FindBugs) {
 }
 
 applicationDistribution.from new File(project.projectDir, "/dslink.json")
-startScripts.classpath = files('*')
