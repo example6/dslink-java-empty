@@ -1,24 +1,24 @@
 {
-  "name": "dslink-java-demo",
+  "name": "dslink-java-empty",
   "version": "0.0.1",
-  "description": "Demo Java DSLink",
+  "description": "Empty Java DSLink",
   "license": "Apache",
   "author": {
     "name": "Julian Villalva",
     "email": "Julian.Villalva@AcuityBrands.com"
   },
-  "main": "bin/dslink-java-demo",
+  "main": "bin/dslink-java-empty",
   "repository": {
     "type": "git",
-    "url": "https://github.com/example6/dslink-java-demo"
+    "url": "https://github.com/example6/dslink-java-empty"
   },
   "bugs": {
-    "url": "https://github.com/example6/dslink-java-demo/issues"
+    "url": "https://github.com/example6/dslink-java-empty/issues"
   },
   "configs": {
     "name": {
       "type": "string",
-      "default": "DSLinkDemo"
+      "default": "EmptyDSLink"
     },
     "broker": {
       "type": "url"
@@ -40,7 +40,7 @@
     },
     "handler_class": {
       "type": "string",
-      "default": "org.dsa.iot.demo.DemoDSLink"
+      "default": "org.dsa.iot.empty.EmptyDSLink"
     }
   }
 }

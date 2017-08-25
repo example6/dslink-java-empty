@@ -1,4 +1,4 @@
-package org.dsa.iot.demo;
+package org.dsa.iot.empty;
 
 import org.dsa.iot.dslink.DSLink;
 import org.dsa.iot.dslink.DSLinkFactory;

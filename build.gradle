@@ -1,0 +1,53 @@
+apply plugin: 'application'
+apply plugin: 'findbugs'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+mainClassName = 'org.dsa.iot.demo.EmptyDSLink'
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+configurations {
+    provided
+}
+
+idea {
+    module {
+        scopes.PROVIDED.plus += [ configurations.provided ]
+    }
+}
+
+dependencies {
+    provided 'com.google.code.findbugs:annotations:3.0.1'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile 'org.apache.httpcomponents:httpclient:4.2.3'
+    compile 'org.iot-dsa:commons:0.17.0-SNAPSHOT'
+    compile 'org.iot-dsa:dslink:0.17.0-SNAPSHOT'
+}
+
+compileJava {
+    sourceSets.main.compileClasspath += configurations.provided
+}
+
+run {
+    args System.getProperty("exec.args", "").split() + "-d" + "../dslink.json"
+    workingDir project.buildDir
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+
+applicationDistribution.from new File(project.projectDir, "/dslink.json")
+startScripts.classpath = files('*')
