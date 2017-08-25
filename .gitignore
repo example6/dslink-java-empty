@@ -1,0 +1,17 @@
+# Misc
+.DS_Store
+
+# Gradle
+.gradle
+build
+
+# Project files
+*.iml
+.idea
+.classpath
+.key
+.nodes.json
+.nodes.json.bak
+.project
+.settings
+bin

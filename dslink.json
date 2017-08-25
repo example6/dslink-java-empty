@@ -1,0 +1,46 @@
+{
+  "name": "dslink-java-demo",
+  "version": "0.0.1",
+  "description": "Demo Java DSLink",
+  "license": "Apache",
+  "author": {
+    "name": "Julian Villalva",
+    "email": "Julian.Villalva@AcuityBrands.com"
+  },
+  "main": "bin/dslink-java-demo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example6/dslink-java-demo"
+  },
+  "bugs": {
+    "url": "https://github.com/example6/dslink-java-demo/issues"
+  },
+  "configs": {
+    "name": {
+      "type": "string",
+      "default": "DSLinkDemo"
+    },
+    "broker": {
+      "type": "url"
+    },
+    "token": {
+      "type": "string"
+    },
+    "nodes": {
+      "type": "path",
+      "default": "nodes.json"
+    },
+    "key": {
+      "type": "path",
+      "default": ".key"
+    },
+    "log": {
+      "type": "enum",
+      "default": "info"
+    },
+    "handler_class": {
+      "type": "string",
+      "default": "org.dsa.iot.demo.DemoDSLink"
+    }
+  }
+}
