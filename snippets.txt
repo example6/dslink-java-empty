@@ -1,0 +1,52 @@
+// Get node manager
+NodeManager manager = link.getNodeManager();
+
+
+
+
+// Get this DSLink's root node
+Node superRoot = manager.getNode("/").getNode();
+
+
+
+
+// Create a child node
+Node child1 = superRoot.createChild("Child1", false).build();
+
+
+
+
+// Create a value under Child1
+Node child1Value = child1.createChild("Value1", false)
+	.setValueType(ValueType.NUMBER)
+	.setValue(new Value(1000))
+	.setSerializable(false)
+	.build();
+
+
+
+
+// Create an action that adds to Value1
+Action addAction = new Action(Permission.READ, new Handler<ActionResult>() {
+	@Override
+	public void handle(ActionResult event) {
+		int amountToAdd = event.getParameter("AmountToAdd").getNumber().intValue();
+		int currentValue = myValue.getValue().getNumber().intValue();
+		int result = amountToAdd + currentValue;
+		child1Value.setValue(new Value(result));
+	}
+});
+addAction.addParameter(new Parameter("AmountToAdd", ValueType.NUMBER));
+
+
+
+
+// Add an action to a node
+Node child1Action1 = child1.createChild("AddToValue", false)
+	.setAction(addAction);
+	.setSerializable(false)
+	.build();
+
+
+
+
